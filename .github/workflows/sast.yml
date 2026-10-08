@@ -6,17 +6,19 @@ on:
 
 jobs:
   semgrep:
-    name: Analisis SAST
+    name: Análisis SAST
     runs-on: ubuntu-latest
 
     permissions:
       contents: read
 
     steps:
-      - name: Descargar codigo
+      - name: Descargar código
         uses: actions/checkout@v4
 
       - name: Ejecutar Semgrep
         uses: semgrep/semgrep-action@v1
         with:
           config: p/python
+
+          # Pipeline SAST con Semgrep
